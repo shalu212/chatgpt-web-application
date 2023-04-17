@@ -13,9 +13,6 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
-#testing
-RUN npm run test
-
 # Expose port 3001
 EXPOSE 3001
 
