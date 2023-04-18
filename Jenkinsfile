@@ -23,7 +23,7 @@ pipeline {
             steps{
                 withCredentials([secrettext(credentialsId: 'openAI', secret: 'text')]) {
                     sh "docker-compose down"
-                    sh "docker-compose up -d -e ${text}"
+                    sh "docker-compose up -d -e ${env.text}"
                 }
             }
         }
