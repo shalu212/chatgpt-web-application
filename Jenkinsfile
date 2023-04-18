@@ -20,9 +20,12 @@ pipeline {
           }
         }
         stage('Deploy'){
+            environment {
+                   secret = credentials('openAI')         
+                }
             steps {
                     sh 'docker-compose down'
-                    sh "docker-compose up -d"
+                    sh "docker-compose up -d -e"
             }
         }
     }
