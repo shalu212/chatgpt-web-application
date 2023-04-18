@@ -5,4 +5,6 @@ services:
     image: bandank/chatgpt-app
     ports:
       - "3001:3001"
+    environment:
+      - OPENAI_API_KEY
 
