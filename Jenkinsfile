@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                withCredentials([Secret(credentialsId: 'openAI', secretVariable: 'text')]) {
-                    sh "docker-compose down"
+                withCredentials([environment(credentialsId: 'openAI', secretVariable: 'text')]) {
+                    sh 'docker-compose down'
                     sh "docker-compose up -d -e ${env.text}"
                 }
             }
