@@ -25,7 +25,7 @@ pipeline {
                 }
             steps {
                     sh 'docker-compose down'
-                    sh "docker-compose up -d -e $key_secret"
+                    sh "docker-compose up -d -e $key"
             }
         }
     }
