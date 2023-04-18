@@ -26,7 +26,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'openAI', variable: 'OPENAI_API_KEY')]) {
                                 sh 'docker-compose down'
-                                sh "docker-compose up -d -e $OPENAI_API_KEY"
+                                sh "docker-compose up -d"
                         }
                     
             }
