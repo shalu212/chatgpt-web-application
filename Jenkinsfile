@@ -1,5 +1,8 @@
 pipeline {
     agent {label 'Devops_Agent'}
+     environment {
+                   key = credentials('openAI')
+                }
     stages {
         stage('Code fetch') {
             steps {
@@ -20,12 +23,12 @@ pipeline {
           }
         }
         stage('Deploy'){
-            environment {
-                   key = credentials('openAI')         
-                }
             steps {
-                    sh 'docker-compose down'
-                    sh "docker-compose up -d -e $key"
+                withCredentials([string(credentialsId: 'openAI', variable: 'OPENAI_API_KEY')]) {
+                                sh 'docker-compose down'
+                                sh "docker-compose up -d -e $OPENAI_API_KEY"
+                        }
+                    
             }
         }
     }
