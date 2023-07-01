@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'agent'}
+    agent {label 'any'}
      environment {
                    key = credentials('openAI')
                 }
