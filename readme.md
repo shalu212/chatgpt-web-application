@@ -1,4 +1,4 @@
-##Project documentation by Shalini: Project-Chatgpt.pdf
+##Project documentation by Shalini: https://github.com/shalu212/chatgpt-web-application/blob/55f0351a245e6a9a111bd5075d19333c07aab768/Project-Chatgpt.pdf
 
 # OpenAI Web Application
 
