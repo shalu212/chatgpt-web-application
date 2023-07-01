@@ -11,14 +11,14 @@ pipeline {
         }
         stage('build and test') {
             steps {
-                sh 'sudo docker build . -t bandank/chatgpt-app:latest'
+                sh 'docker build . -t iamadminallowme/chatgpt-app:latest'
             }
         }
         stage('push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                sh 'docker push bandank/chatgpt-app:latest'
+                sh 'docker push iamadminallowme/chatgpt-app:latest'
             }
           }
         }
