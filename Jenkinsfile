@@ -17,7 +17,7 @@ pipeline {
         stage('push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-                sh "docker login -u ${env.iamadminallowme} -p ${env.kotapuri1234}"
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                 sh 'docker push bandank/chatgpt-app:latest'
             }
           }
