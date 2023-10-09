@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Code fetch') {
             steps {
-                git url:'https://github.com/Bandank/chatgpt-web-application.git',branch:'master'
+                git url:'https://github.com/shalu212/chatgpt-web-application.git'
             }
         }
         stage('build and test') {
